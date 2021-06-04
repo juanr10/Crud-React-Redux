@@ -6,6 +6,10 @@ import Products from './components/Products';
 import NewProduct from './components/NewProduct';
 import EditProduct from './components/EditProduct';
 
+/**
+ * CRUD React Usando react-router-dom, Redux, json server
+ * @returns 
+ */
 function App() {
   return (
     <Router>

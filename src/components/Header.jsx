@@ -10,7 +10,7 @@ const Header = () => {
                 </h1>
             </div>
 
-            <Link className="btn btn-danger nuevo-post d-block d-md-inline-block" to="/productos/nuevo">Agregar Producto &#43;</Link>
+            <Link className="btn btn-danger nuevo-post d-block d-md-inline-block" to="/productos/nuevo">Add a Product &#43;</Link>
         </nav>
      );
 }
