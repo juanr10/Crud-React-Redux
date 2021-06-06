@@ -4,3 +4,9 @@ import {
     ADD_PRODUCT_ERROR
 } from '../types';
 
+//Add new products
+export function addNewProductAction(product){
+    return () => {
+        console.log(product);
+    }
+}
