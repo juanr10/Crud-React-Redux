@@ -11,6 +11,10 @@ const NewProduct = () => {
     //Using dispatch to create a function
     const dispatch = useDispatch();
 
+    //Store state access
+    const loading = useSelector(state => state.products.loading);
+    const error = useSelector(state => state.products.error);
+
     /**
      * @name: addProduct.
      * @description: Call action @addNewProductAction from productActions passing a product.
@@ -60,6 +64,10 @@ const NewProduct = () => {
                             </div>
                             <button type="submit" className="btn btn-primary font-weight-bold d-block w-100">Add</button>
                         </form>
+
+                        {/* Poner spinner */}
+                        {loading ? <p>Loading...</p> : null}
+                        {error ? <p className="alert alert-danger p-2 mt-4 text-center">There is an unexpected error. Please try again.</p> : null}
                     </div>
                 </div>
             </div>
