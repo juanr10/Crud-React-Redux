@@ -6,7 +6,28 @@ import {
 
 //Add new products
 export function addNewProductAction(product){
-    return () => {
-        console.log(product);
+    return (dispatch) => {
+        dispatch(addProduct());
+
+        try {
+            dispatch(addProductSuccess(product));
+        } catch (error) {
+            dispatch(addProductError(true));
+        }
     }
 }
+
+const addProduct = () => ({
+    type: ADD_PRODUCT,
+    payload: true
+});
+
+const addProductSuccess = product => ({
+    type: ADD_PRODUCT_SUCCESS,
+    payload: product
+})
+
+const addProductError = error => ({
+    type: ADD_PRODUCT_ERROR,
+    payload: error
+})
