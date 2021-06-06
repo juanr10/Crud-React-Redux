@@ -35,16 +35,34 @@ export function addNewProductAction(product){
     }
 }
 
+/**
+ * @name: addProduct.
+ * @description: Call action @addNewProductAction from productActions passing a product.
+ * @param: product to add.
+ * @return: none.
+*/
 const addProduct = () => ({
     type: ADD_PRODUCT,
     payload: true
 });
 
+/**
+ * @name: addProductSuccess.
+ * @description: Call action @addNewProductAction from productActions passing a product.
+ * @param: product to add.
+ * @return: none.
+*/
 const addProductSuccess = product => ({
     type: ADD_PRODUCT_SUCCESS,
     payload: product
 })
 
+/**
+ * @name: addProductError.
+ * @description: Call action @addNewProductAction from productActions passing a product.
+ * @param: product to add.
+ * @return: none.
+*/
 const addProductError = error => ({
     type: ADD_PRODUCT_ERROR,
     payload: error
