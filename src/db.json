@@ -44,6 +44,11 @@
       "name": "test2",
       "price": 89,
       "id": 9
+    },
+    {
+      "name": "Yogur",
+      "price": 1.32,
+      "id": 10
     }
   ]
 }

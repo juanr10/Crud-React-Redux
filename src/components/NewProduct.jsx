@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {addNewProductAction} from '../actions/productActions';
 
-const NewProduct = () => {
+const NewProduct = ({history}) => {
     //State component
     const [name, saveName] = useState('');
     const [price, savePrice] = useState(0);
@@ -42,6 +42,9 @@ const NewProduct = () => {
             name,
             price
         });
+
+        //Home redirection
+        history.push('/');
     }
 
     return (  
