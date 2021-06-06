@@ -1,3 +1,4 @@
+import axiosClient from '../config/axios';
 import { 
     ADD_PRODUCT,
     ADD_PRODUCT_SUCCESS,
@@ -6,12 +7,14 @@ import {
 
 //Add new products
 export function addNewProductAction(product){
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(addProduct());
 
         try {
+            await axiosClient.post('/test', product);
             dispatch(addProductSuccess(product));
         } catch (error) {
+            console.log(error);
             dispatch(addProductError(true));
         }
     }

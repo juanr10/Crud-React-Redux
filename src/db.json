@@ -1,29 +1,34 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Carrot Juice 1.5L",
-        "price": "3.20"
-      },
-      {
-        "id": 2,
-        "name": "Pringle Onion & Cream",
-        "price": "2.10"
-      },
-      {
-        "name": "Apple Juice 1.5L",
-        "price": "3.20",
-        "id": 3
-      },
-      {
-        "name": "RedBull",
-        "price": "1.60",
-        "id": 4
-      },
-      {
-        "name": "Doritos 300gr",
-        "price": "1.40",
-        "id": 5
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "Carrot Juice 1.5L",
+      "price": "3.20"
+    },
+    {
+      "id": 2,
+      "name": "Pringle Onion & Cream",
+      "price": "2.10"
+    },
+    {
+      "name": "Apple Juice 1.5L",
+      "price": "3.20",
+      "id": 3
+    },
+    {
+      "name": "RedBull",
+      "price": "1.60",
+      "id": 4
+    },
+    {
+      "name": "Doritos 300gr",
+      "price": "1.40",
+      "id": 5
+    },
+    {
+      "name": "Black Beer",
+      "price": 1.1,
+      "id": 6
+    }
+  ]
+}
