@@ -29,26 +29,6 @@
       "name": "Black Beer",
       "price": 1.1,
       "id": 6
-    },
-    {
-      "name": "test2",
-      "price": 89,
-      "id": 7
-    },
-    {
-      "name": "test2",
-      "price": 89,
-      "id": 8
-    },
-    {
-      "name": "test2",
-      "price": 89,
-      "id": 9
-    },
-    {
-      "name": "Yogur",
-      "price": 1.32,
-      "id": 10
     }
   ]
 }

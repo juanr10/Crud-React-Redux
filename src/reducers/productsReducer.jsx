@@ -13,6 +13,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
+        case START_PRODUCTS_DOWNLOAD:
         case ADD_PRODUCT:
             return {
                 ...state,
@@ -29,7 +30,7 @@ export default function(state = initialState, action) {
                 ...state,
                 loading: false,
                 error: action.payload
-            }    
+            }
         default: 
             return state;
     }
