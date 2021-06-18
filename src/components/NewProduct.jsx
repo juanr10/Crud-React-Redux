@@ -70,7 +70,7 @@ const NewProduct = ({history}) => {
 
                         {/* Poner spinner */}
                         {loading ? <p>Loading...</p> : null}
-                        {error ? <p className="alert alert-danger p-2 mt-4 text-center">There is an unexpected error. Please try again.</p> : null}
+                        {error ? <p className="alert alert-danger p-2 mt-4 text-center">There is an unexpected error. Please try again later.</p> : null}
                     </div>
                 </div>
             </div>

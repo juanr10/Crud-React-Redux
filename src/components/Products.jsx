@@ -18,11 +18,15 @@ const Products = () => {
 
     //Products state access
     const products = useSelector(state => state.products.products);
+    const loading = useSelector(state => state.products.loading);
     const error = useSelector(state => state.products.error);
 
     return ( 
         <Fragment>
             <h2 className="text-center my-5">Products list</h2>
+
+            {error ? <p className="alert alert-danger p-2 mt-4 text-center mt-4">There is an unexpected error loading products. Please try again later.</p> : null}
+            {loading ? <p className="text-center">Loading...</p> : null}
 
             <table className="table table-striped">
                 <thead className="bg-primary table-dark">
