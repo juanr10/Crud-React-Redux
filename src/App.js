@@ -24,8 +24,8 @@ function App() {
           <div className="container mt-5">
             <Switch>
                 <Route exact path="/" component={Products}/>
-                <Route exact path="/productos/nuevo" component={NewProduct}/>
-                <Route exact path="/productos/editar/:id" component={EditProduct}/>
+                <Route exact path="/products/add" component={NewProduct}/>
+                <Route exact path="/products/edit/:id" component={EditProduct}/>
             </Switch>
           </div>
       </Provider>

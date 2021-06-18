@@ -11,7 +11,7 @@ const NewProduct = ({history}) => {
     //Using dispatch to create a function
     const dispatch = useDispatch();
 
-    //Store state access
+    //Products state access
     const loading = useSelector(state => state.products.loading);
     const error = useSelector(state => state.products.error);
 
