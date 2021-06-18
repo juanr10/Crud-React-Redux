@@ -25,8 +25,8 @@ const NewProduct = ({history}) => {
 
     /**
      * @name: submit.
-     * @description: Verify if the product data is correct and if so, create a new product..
-     * @param: Juan Argudo.
+     * @description: Validates that the data entered are correct and if so, calls the method @addProduct.
+     * @param: none.
      * @return: none.
     */
     const submit = e => {

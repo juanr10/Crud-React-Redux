@@ -6,7 +6,7 @@ import {
     ADD_PRODUCT_ERROR,
     START_PRODUCTS_DOWNLOAD,
     PRODUCTS_DOWNLOAD_SUCCESS,
-    START_PRODUCTS_DOWNLOAD_ERROR
+    PRODUCTS_DOWNLOAD_ERROR
 } from '../types';
 
 
@@ -52,7 +52,16 @@ export function addNewProductAction(product){
 */
 export function getProductsAction() {
     return async (dispatch) => {
-        dispatch(downloadProducts());
+        dispatch(productsDownload());
+
+        try {
+            const products = await axiosClient.get('/products');
+            dispatch(productsDownloadSuccess(products.data));
+
+        } catch (error) {
+            console.log(error);
+            dispatch(productsDownloadError(true));
+        }
     }
 }
 
@@ -91,11 +100,33 @@ const addProductError = error => ({
 
 /**
  * @name: downloadProducts.
- * @description: Call action @getProductsAction from productActions to get products.
+ * @description: Sets the loading status to true until the products are downloaded.
  * @param: none.
  * @return: none.
 */
-const downloadProducts = () => ({
+const productsDownload = () => ({
     type: START_PRODUCTS_DOWNLOAD,
     payload: true
+});
+
+/**
+ * @name: productsDownloadSuccess.
+ * @description: Load products to the global products state.
+ * @param: products to load.
+ * @return: none.
+*/
+const productsDownloadSuccess = products => ({
+    type: PRODUCTS_DOWNLOAD_SUCCESS,
+    payload: products
+});
+
+/**
+ * @name: addProductError.
+ * @description: Passes a boolean variable to indicate that there has been an error in @addNewProductAction.
+ * @param: error.
+ * @return: none.
+*/
+const productsDownloadError = error => ({
+    type: PRODUCTS_DOWNLOAD_ERROR,
+    payload: error
 });
