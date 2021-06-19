@@ -35,13 +35,19 @@ const Products = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.length === 0 ? <tr><td>No hay productos</td></tr> : (
-                        products.map(product => (
-                            <Product 
-                                key={product.id}
-                                product={product}
-                            />
-                        ))
+                    {products.length === 0 
+                        ? 
+                            <tr>
+                                <td>No hay productos</td>
+                            </tr> 
+                        : 
+                            (
+                            products.map(product => (
+                                <Product 
+                                    key={product.id}
+                                    product={product}
+                                />
+                            ))
                     )}
                 </tbody>
             </table>

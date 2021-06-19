@@ -11,7 +11,7 @@ import EditProduct from './components/EditProduct';
 
 /**
  * @name: CRUD React - Redux.
- * @description: CRUD REACT-REDUX with Hooks using react-router-dom, json server & sweetAlert2.
+ * @description: CRUD REACT-REDUX using Hooks, react-router-dom, json server & sweetAlert2.
  * @author: Juan Argudo.
  * @version: 19/06/2021.
  */

@@ -81,7 +81,7 @@ const NewProduct = ({history}) => {
                             <button type="submit" className="btn btn-primary font-weight-bold d-block w-100">Add</button>
                         </form>
 
-                        {/* Poner spinner */}
+                        {/* TODO -> ADD SPINNER*/}
                         {loading ? <p>Loading...</p> : null}
                         {error ? <p className="alert alert-danger p-2 mt-4 text-center">There is an unexpected error. Please try again later.</p> : null}
                     </div>
