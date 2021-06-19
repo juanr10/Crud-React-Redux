@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 //Redux
 import {Provider} from 'react-redux';
@@ -9,12 +9,11 @@ import Products from './components/Products';
 import NewProduct from './components/NewProduct';
 import EditProduct from './components/EditProduct';
 
-
 /**
- * @name: .
- * @description: CRUD React Usando react-router-dom, Redux, json server.
+ * @name: CRUD React - Redux.
+ * @description: CRUD REACT-REDUX with Hooks using react-router-dom, json server & sweetAlert2.
  * @author: Juan Argudo.
- * @version: .
+ * @version: 19/06/2021.
  */
 function App() {
   return (

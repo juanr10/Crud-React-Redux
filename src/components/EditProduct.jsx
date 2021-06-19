@@ -31,7 +31,7 @@ const EditProduct = () => {
     const onChangeForm = e => {
         let value = e.target.value;
 
-        if (e.target.name == 'price') {
+        if (e.target.name === 'price') {
             value = Number.parseFloat(e.target.value)
         }
 

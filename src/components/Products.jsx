@@ -9,11 +9,9 @@ const Products = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
         const loadProducts = () => dispatch(getProductsAction());
-
         loadProducts();
-
+        //eslint-disable-next-line
     }, []);
 
     //Products state access

@@ -24,6 +24,16 @@
       "name": "Doritos 300gr",
       "price": "1.40",
       "id": 5
+    },
+    {
+      "name": "Test",
+      "price": 12.6,
+      "id": 6
+    },
+    {
+      "name": "test2",
+      "price": 12.9,
+      "id": 7
     }
   ]
 }
