@@ -3,15 +3,15 @@
     {
       "id": 1,
       "name": "Carrot Juice 1.5L",
-      "price": "3.20"
+      "price": 3.22
     },
     {
       "id": 2,
-      "name": "Pringle Onion & Cream",
-      "price": "2.10"
+      "name": "Pringles Onion & Cream",
+      "price": 2.7
     },
     {
-      "name": "Apple Juice 1.5L",
+      "name": "Apple Juice 1.5Lw",
       "price": "3.20",
       "id": 3
     },

@@ -9,7 +9,10 @@ import {
     PRODUCTS_DOWNLOAD_ERROR,
     DELETE_PRODUCT,
     DELETE_PRODUCT_SUCCESS,
-    DELETE_PRODUCT_ERROR
+    DELETE_PRODUCT_ERROR,
+    EDIT_PRODUCT,
+    EDIT_PRODUCT_SUCCESS,
+    EDIT_PRODUCT_ERROR
 } from '../types';
 
 
@@ -90,6 +93,48 @@ export function deleteProductAction(id){
         } catch (error) {
             console.log(error);
             dispatch(deleteProductError(true));
+
+            Swal.fire(
+                'Error.',
+                'There is an unexpected error on the server.',
+                'error'
+            );
+        }
+    }
+}
+
+/**
+ * @name: getProductToEditAction.
+ * @description: Get the product to edit.
+ * @param: product to edit.
+ * @return: none.
+*/
+export function getProductToEditAction(product){
+    return async (dispatch) => {
+        dispatch(editProduct(product));
+    }
+}
+
+/**
+ * @name: editProductAction.
+ * @description: Edit a product from the database.
+ * @param: product to edit.
+ * @return: none.
+*/
+export function editProductAction(product){
+    return async (dispatch) => {
+        try {
+            await axiosClient.put(`/products/${product.id}`, product);
+            dispatch(editProductSuccess(product));
+
+            Swal.fire(
+                'Success.',
+                'The product has been updated successfully.',
+                'success'
+            );
+        } catch (error) {
+            console.log(error);
+            dispatch(editProductError(true));
 
             Swal.fire(
                 'Error.',
@@ -195,5 +240,38 @@ const deleteProductSuccess = () => ({
 */
 const deleteProductError = error => ({
     type: DELETE_PRODUCT_ERROR,
+    payload: error
+});
+
+/**
+ * @name: startEditProduct.
+ * @description: Add to the global state 'productToEdit' the product that will be edited.
+ * @param: product to edit.
+ * @return: none.
+*/
+const editProduct = (product) => ({
+    type: EDIT_PRODUCT,
+    payload: product
+});
+
+/**
+ * @name: editProductSuccess.
+ * @description: When a product is successfully edited, it is also updated in the global state 'products'.
+ * @param: product added.
+ * @return: none.
+*/
+const editProductSuccess = product => ({
+    type: EDIT_PRODUCT_SUCCESS,
+    payload: product
+});
+
+/**
+ * @name: editProductError.
+ * @description: Passes a boolean variable to indicate that there has been an error in @editProductAction setting the global state 'error' to true.
+ * @param: error.
+ * @return: none.
+*/
+const editProductError = error => ({
+    type: EDIT_PRODUCT_ERROR,
     payload: error
 });

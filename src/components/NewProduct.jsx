@@ -7,7 +7,6 @@ const NewProduct = ({history}) => {
     //State component
     const [name, saveName] = useState('');
     const [price, savePrice] = useState(0);
-
     //Using dispatch to create a function
     const dispatch = useDispatch();
 

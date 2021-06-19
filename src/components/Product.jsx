@@ -1,14 +1,14 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 //Redux 
 import {useDispatch} from 'react-redux';
-import {deleteProductAction} from '../actions/productActions';
+import {deleteProductAction, getProductToEditAction} from '../actions/productActions';
 import Swal from 'sweetalert2';
 
 const Product = ({product}) => {
     const {id, name, price} = product;
-
     const dispatch = useDispatch();
+    const history = useHistory();
 
     /**
      * @name: deleteConfirm.
@@ -35,15 +35,28 @@ const Product = ({product}) => {
         });
     }
 
+    /**
+     * @name: editRedirection.
+     * @description: Get the product to edit adding it to the global state 'productToEdit' and redirects to edit view.
+     * @param: product to edit.
+     * @return: none.
+    */
+    const editRedirection = product => {
+        dispatch(getProductToEditAction(product));
+        history.push(`/products/edit/${product.id}`);
+    }
+
     return ( 
         <tr>
             <td>{name}</td>
             <td><span className="font-weight-bold">${price}</span></td>
             <td className="acciones">
-                <Link to={`/products/edit/${id}`} className="btn btn-primary mr-2">
+                <button type="button" onClick={() => editRedirection(product)} className="btn btn-primary mr-2">
                     Edit
-                </Link>
-                <button onClick={() => deleteConfirm(id)} type="button" className="btn btn-danger">Delete</button>
+                </button>
+                <button onClick={() => deleteConfirm(id)} type="button" className="btn btn-danger">
+                    Delete
+                </button>
             </td>
         </tr>
      );
